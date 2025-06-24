@@ -13,12 +13,20 @@ function Login() {
         email,
         senha
       })
+       const { token, tipo } = resposta.data
 
       localStorage.setItem("token", resposta.data.token)
+      localStorage.setItem("tipo", resposta.data.tipo)      
       alert("Login realizado com sucesso")
-      navigate("/acessos")
+
+
+      if (tipo === "administrador") {
+        navigate("/acessos-adm")
+      } else {
+        navigate("/acessos-geral")
+      }
     } catch (erro) {
-      if (erro.response && erro.response.data && erro.response.data.mensagem) {
+      if (erro.response?.data?.mensagem) {
         alert(erro.response.data.mensagem)
       } else {
         alert("Erro desconhecido")
@@ -43,6 +51,8 @@ function Login() {
         onChange={(e) => setSenha(e.target.value)}
       />
       <button onClick={handleLogin}>Entrar</button>
+      <p>Não tem uma conta?</p>
+      <button onClick={() => navigate("/cadastro")}>Cadastre-se</button>
     </div>
   )
 }

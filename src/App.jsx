@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Login from "./paginas/Login"
-import Acessos from "./paginas/Acessos-Adm"
+import AcessosAdm from "./paginas/Acessos-Adm"
 import PrivateRoute from "./rotas/PrivateRoute"
 import RelatorioAcessos from "./paginas/RelatorioAcessos"
 import Cadastro from "./paginas/Cadastro"
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/acessos-adm" element={<PrivateRoute><Acessos /></PrivateRoute>} />
+        <Route path="/acessos-adm" element={<PrivateRoute><AcessosAdm /></PrivateRoute>} />
         <Route path="/usuario" element={
           <PrivateRoute>
             <Usuario />

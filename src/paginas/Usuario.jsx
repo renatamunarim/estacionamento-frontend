@@ -7,7 +7,7 @@ function Usuario() {
   const [veiculos, setVeiculos] = useState([])
   const [acessos, setAcessos] = useState([])
   const [editandoVeiculoId, setEditandoVeiculoId] = useState(null)
-  const [novoVeiculo, setNovoVeiculo] = useState({ placa: "", modelo: "" })
+  const [novoVeiculo, setNovoVeiculo] = useState({ placa: "", modelo: "", cor: "" })
   const navigate = useNavigate()
 
   const token = localStorage.getItem("token")
@@ -36,12 +36,12 @@ function Usuario() {
     }
   }
 
-    function handleLogout() {
-        localStorage.removeItem("token")
-        navigate("/")
-    }
+  function handleLogout() {
+    localStorage.removeItem("token")
+    navigate("/")
+  }
 
-    async function excluirPerfil() {
+  async function excluirPerfil() {
     if (!window.confirm("Deseja realmente excluir seu perfil?")) return
     try {
       await axios.delete(`/usuario/${perfil.id}`, {
@@ -53,13 +53,13 @@ function Usuario() {
       alert("Erro ao excluir perfil")
     }
   }
- async function adicionarVeiculo() {
-    if (!novoVeiculo.placa || !novoVeiculo.modelo) return alert("Preencha todos os campos")
+  async function adicionarVeiculo() {
+    if (!novoVeiculo.placa || !novoVeiculo.modelo || !novoVeiculo.cor) return alert("Preencha todos os campos")
     try {
       await axios.post("/veiculos", novoVeiculo, {
         headers: { Authorization: `Bearer ${token}` }
       })
-      setNovoVeiculo({ placa: "", modelo: "" })
+      setNovoVeiculo({ placa: "", modelo: "", cor: "" })
       buscarTudo()
     } catch (erro) {
       alert("Erro ao adicionar veículo")
@@ -127,6 +127,10 @@ function Usuario() {
                   value={veiculo.modelo}
                   onChange={(e) => atualizarCampoVeiculo(veiculo.id, "modelo", e.target.value)}
                 />
+                                <input
+                  value={veiculo.cor}
+                  onChange={(e) => atualizarCampoVeiculo(veiculo.id, "cor", e.target.value)}
+                />
                 <button onClick={() => salvarEdicaoVeiculo(veiculo.id)}>Salvar</button>
                 <button onClick={() => setEditandoVeiculoId(null)}>Cancelar</button>
               </>
@@ -151,6 +155,11 @@ function Usuario() {
         placeholder="Modelo"
         value={novoVeiculo.modelo}
         onChange={(e) => setNovoVeiculo({ ...novoVeiculo, modelo: e.target.value })}
+      />
+      <input
+        placeholder="Cor"
+        value={novoVeiculo.cor}
+        onChange={(e) => setNovoVeiculo({ ...novoVeiculo, cor: e.target.value })}
       />
       <button onClick={adicionarVeiculo}>Adicionar</button>
 

@@ -13,12 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/acessos-adm" element={
-          <PrivateRoute>
-            <Acessos />
-          </PrivateRoute>
-        }
-        />
+        <Route path="/acessos-adm" element={<PrivateRoute><Acessos /></PrivateRoute>} />
         <Route path="/usuario" element={
           <PrivateRoute>
             <Usuario />

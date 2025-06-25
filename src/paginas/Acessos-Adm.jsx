@@ -18,7 +18,7 @@ function Acessos() {
         const token = localStorage.getItem("token")
 
         try {
-            const resposta = await axios.get("/acessos-adm", {
+            const resposta = await axios.get("/acessos", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

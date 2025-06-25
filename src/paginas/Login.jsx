@@ -9,22 +9,22 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const resposta = await axios.post("/login", {
-        email,
-        senha
-      })
-       const { token, tipo } = resposta.data
-
-      localStorage.setItem("token", resposta.data.token)
-      localStorage.setItem("tipo", resposta.data.tipo)      
+      const resposta = await axios.post("/login", { email, senha })
+ 
+      const token = resposta.data.token
+      const tipo = resposta.data.usuario.tipo
+  
+      localStorage.setItem("token", token)
+      localStorage.setItem("tipo", tipo)
+  
       alert("Login realizado com sucesso")
-
-
-      if (tipo === "administrador") {
+  
+      if (tipo === "admin") {
         navigate("/acessos-adm")
       } else {
-        navigate("/acessos-geral")
+        navigate("/usuario")
       }
+  
     } catch (erro) {
       if (erro.response?.data?.mensagem) {
         alert(erro.response.data.mensagem)

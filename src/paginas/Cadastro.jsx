@@ -85,7 +85,7 @@ function Cadastro() {
                     <option value="aluno">Aluno</option>
                     <option value="professor">Professor</option>
                     <option value="funcionario">Funcionário</option>
-                    <option value="administrador">Administrador</option>
+                    <option value="admin">admin</option>
                 </select>
                 <br />
                 <button type="submit">Cadastrar</button>

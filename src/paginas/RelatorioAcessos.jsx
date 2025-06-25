@@ -3,17 +3,11 @@ import axios from "../servicos/Api"
 
 function RelatorioAcessos() {
   const [acessos, setAcessos] = useState([])
-  const [usuarioFiltro, setUsuarioFiltro] = useState("")
-  const [placaFiltro, setPlacaFiltro] = useState("")
 
   async function buscarRelatorio() {
     try {
       const token = localStorage.getItem("token")
-      const resposta = await axios.get(`/relatorio-acessos`, {
-        params: {
-          usuario: usuarioFiltro,
-          placa: placaFiltro,
-        },
+      const resposta = await axios.get("/relatorio-acessos", {
         headers: { Authorization: `Bearer ${token}` },
       })
       setAcessos(resposta.data)
@@ -24,7 +18,7 @@ function RelatorioAcessos() {
 
   useEffect(() => {
     buscarRelatorio()
-  }, [usuarioFiltro, placaFiltro])
+  }, [])
 
   function exportarCSV() {
     const linhas = acessos.map((acesso) =>
@@ -51,7 +45,6 @@ function RelatorioAcessos() {
   return (
     <div>
       <h2>Relatório de Acessos</h2>
-
 
       <button onClick={exportarCSV}>Exportar CSV</button>
 

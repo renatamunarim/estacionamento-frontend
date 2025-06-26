@@ -83,8 +83,7 @@ function Usuario() {
       const veiculo = veiculos.find(v => v.id === id)
       await axios.put(`/veiculos/${id}`, {
         placa: veiculo.placa,
-        modelo: veiculo.modelo,
-        cor: veiculo.cor        
+        modelo: veiculo.modelo
       }, {
         headers: { Authorization: `Bearer ${token}` }
       })
@@ -170,7 +169,7 @@ function Usuario() {
       <ul>
         {acessos.map(acesso => (
           <li key={acesso.id}>
-            Tipo: {acesso.tipo} | Horário: {new Date(acesso.horario).toLocaleString()}
+            Horário: {new Date(acesso.horario).toLocaleString()} | {acesso.tipo}
           </li>
         ))}
       </ul>

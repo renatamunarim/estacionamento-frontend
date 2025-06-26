@@ -9,6 +9,7 @@ function Cadastro() {
     const [telefone, setTelefone] = useState("")
     const [senha, setSenha] = useState("")
     const [tipo, setTipo] = useState("")
+    
     const navigate = useNavigate()
 
     const handleCadastro = async (e) => {

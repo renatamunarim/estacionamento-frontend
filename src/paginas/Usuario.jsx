@@ -83,7 +83,8 @@ function Usuario() {
       const veiculo = veiculos.find(v => v.id === id)
       await axios.put(`/veiculos/${id}`, {
         placa: veiculo.placa,
-        modelo: veiculo.modelo
+        modelo: veiculo.modelo,
+        cor: veiculo.cor        
       }, {
         headers: { Authorization: `Bearer ${token}` }
       })

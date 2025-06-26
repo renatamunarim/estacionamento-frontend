@@ -6,6 +6,7 @@ function AcessosAdm() {
   const [placa, setPlaca] = useState("")
   const [tipo, setTipo] = useState("entrada")
   const [status, setStatus] = useState(null)
+  const [lotado, setLotado] = useState(false)
   const navigate = useNavigate()
 
   const token = localStorage.getItem("token")
@@ -21,7 +22,8 @@ function AcessosAdm() {
       })
       alert("Acesso registrado com sucesso!")
       setPlaca("")
-      buscarStatus()
+      await verificarStatusEstacionamento()
+      await buscarStatus()
     } catch (err) {
       console.error("Erro ao registrar acesso:", err.response?.data || err.message)
       alert("Erro ao registrar acesso")
@@ -41,6 +43,22 @@ function AcessosAdm() {
     }
   }
 
+  async function verificarStatusEstacionamento() {
+    const token = localStorage.getItem("token")
+    try {
+      const resposta = await axios.get("/vagas-disponiveis", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+
+      const { ocupacaoAtual, capacidadeMaxima } = resposta.data
+      setLotado(ocupacaoAtual >= capacidadeMaxima)
+    } catch (erro) {
+      console.error("Erro ao verificar status do estacionamento")
+    }
+  }
+
   function handleLogout() {
     localStorage.removeItem("token")
     navigate("/")
@@ -48,12 +66,14 @@ function AcessosAdm() {
 
   useEffect(() => {
     buscarStatus()
+    verificarStatusEstacionamento()
   }, [])
+
 
   return (
     <div>
       <button onClick={handleLogout}>Sair</button>
-
+      {lotado && <p style={{ color: "red" }}>Estacionamento lotado!</p>}
       <h2>Cadastro de Acesso</h2>
       <form onSubmit={registrarAcesso}>
         <input
@@ -80,9 +100,9 @@ function AcessosAdm() {
       ) : (
         <p>Carregando status...</p>
       )}
-                <button onClick={() => navigate("/relatorio-acessos")}>
-                Ver Relatório de Acessos
-            </button>
+      <button onClick={() => navigate("/relatorio-acessos")}>
+        Ver Relatório de Acessos
+      </button>
     </div>
   )
 }

@@ -20,8 +20,8 @@ function App() {
           </PrivateRoute>
         } />
         <Route path="/relatorio-acessos" element={<RelatorioAcessos />} />
-
       </Routes>
+
     </BrowserRouter>
   )
 }

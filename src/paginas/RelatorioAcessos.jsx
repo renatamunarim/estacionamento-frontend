@@ -1,3 +1,4 @@
+import "./RelatorioAcessos.css"
 import { useEffect, useState } from "react"
 import axios from "../servicos/Api"
 

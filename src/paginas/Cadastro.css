@@ -1,0 +1,48 @@
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    background-color: white;
+    font-family: sans-serif;
+  }
+  
+.cadastro-topo,
+  .bottom-img {
+    width: 100%;
+  }
+  
+  .cadastro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+ .cadastro-logo {
+    width: 800px;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 300px;
+    padding: 15px;
+    border-radius: 30px;
+    border: 2px solid black;
+    font-size: 20px;
+  }
+  
+  .login-botao-entrar {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+  }
+
+  .login-botao-cadastre-se{
+  font-weight: bold;
+  font-size: 20px;
+  }

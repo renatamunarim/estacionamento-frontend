@@ -1,3 +1,4 @@
+import "./Acessos-Adm.css"
 import { useState, useEffect } from "react"
 import axios from "../servicos/Api"
 import { useNavigate } from "react-router-dom"

@@ -1,4 +1,7 @@
 import "./Acessos-Adm.css"
+import estrada from "../assets/estradinha.png"
+import logo from "../assets/estacionamento.png"
+import rodape from "../assets/senai.png"
 import { useState, useEffect } from "react"
 import axios from "../servicos/Api"
 import { useNavigate } from "react-router-dom"
@@ -72,10 +75,18 @@ function AcessosAdm() {
 
 
   return (
-    <div>
-      <button onClick={handleLogout}>Sair</button>
-      {lotado && <p style={{ color: "red" }}>Estacionamento lotado!</p>}
-      <h2>Cadastro de Acesso</h2>
+    <div className="cadastro-container">
+      <img src={estrada} alt="Estrada" className="cadastro-topo" />
+      <div className="topo">
+        <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
+        <div className="saudacao">
+          Olá, <span>Admin</span> <br />
+        </div>
+      </div>
+      <button className="adm-botao-sair" onClick={handleLogout}>Sair</button>
+
+      {lotado && <p id="lotado">Estacionamento lotado!</p>}
+      <h2>Cadastrar acesso</h2>
       <form onSubmit={registrarAcesso}>
         <input
           type="text"
@@ -88,23 +99,22 @@ function AcessosAdm() {
           <option value="entrada">Entrada</option>
           <option value="saida">Saída</option>
         </select>
-        <button type="submit">Registrar</button>
+        <button className="adm-botao-registrar" type="submit">Registrar</button>
       </form>
 
       {status ? (
-        <div>
-          <h3>Status do Estacionamento</h3>
-          <p>Capacidade: {status.capacidadeMaxima}</p>
-          <p>Ocupação atual: {status.ocupacaoAtual}</p>
-          <p><strong>Vagas disponíveis: {status.vagasDisponiveis}</strong></p>
+        <div className="status-estacionamento">
+          <div>Vagas disponíveis <span className="status"> {status.capacidadeMaxima}</span></div>
+          <div><span className="status">{status.ocupacaoAtual}</span> Ocupação atual</div>
         </div>
       ) : (
         <p>Carregando status...</p>
       )}
-      <button onClick={() => navigate("/relatorio-acessos")}>
-        Ver Relatório de Acessos
+      <button className="adm-botao-relatorio" onClick={() => navigate("/relatorio-acessos")}>
+        Relatório de Acessos
       </button>
-    </div>
+            <img src={rodape} alt="SENAI" className="bottom-img" />
+        </div>
   )
 }
 

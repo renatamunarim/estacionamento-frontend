@@ -1,0 +1,102 @@
+.container-acessos {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    height: 80px;
+}
+
+.saudacao {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.saudacao span {
+    color: red;
+}
+
+.adm-botao-sair {
+    font-size: 14px;
+    font-weight: "normal";
+}
+
+#lotado {
+    font-size: 28px;
+    color: red;
+    margin: 2rem 0;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+input,
+select {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 20px;
+    min-width: 200px;
+}
+
+.adm-botao-registrarton {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.status-estacionamento {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+.status-estacionamento span {
+    background: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.status-estacionamento .status {
+    color: red;
+}
+
+.bottom-img {
+    width: 100%;
+}
+
+.adm-botao-relatorio {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 20px;
+}

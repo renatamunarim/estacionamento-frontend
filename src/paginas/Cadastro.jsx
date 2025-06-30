@@ -40,8 +40,8 @@ function Cadastro() {
     return (
     <div className="cadastro-container">
       <img src={estrada} alt="Estrada" className="cadastro-topo" />
+                      <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
       <div className="cadastro-content">
-                <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
                 <form className="cadastro-content" onSubmit={handleCadastro}>
                     <input  className="input-cadastrar"
                         type="text"
@@ -95,7 +95,7 @@ function Cadastro() {
                         <option value="admin">admin</option>
                     </select>
                     <br />
-                    <button className="botao" type="submit">Cadastrar</button>
+                    <button className="cadastro-botao-cadastrar" type="submit">Cadastrar</button>
                 </form>
             </div>
             <img src={rodape} alt="SENAI" className="bottom-img" />

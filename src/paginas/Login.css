@@ -22,7 +22,7 @@
   
  .login-logo {
     width: 800px;
-    margin-bottom: 20px;
+    margin: 20px;
   }
   
   input {
@@ -40,9 +40,10 @@
     padding: 15px 40px;
     border-radius: 30px;
     border: none;
+    margin-bottom: 20px;
   }
 
   .login-botao-cadastre-se{
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   }

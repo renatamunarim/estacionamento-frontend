@@ -1,7 +1,6 @@
 .cadastro-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     height: 100%;
     background-color: white;
@@ -20,12 +19,13 @@
     gap: 1rem;
   }
   
- .cadastro-logo {
-    width: 800px;
-    margin-bottom: 20px;
+.cadastro-logo {
+    width: 400px;
+    margin: 20px;
+    align-items: left;
   }
   
-  input {
+  .input-cadastrar {
     width: 300px;
     padding: 15px;
     border-radius: 30px;
@@ -33,16 +33,14 @@
     font-size: 20px;
   }
   
-  .login-botao-entrar {
+  .cadastro-botao-cadastrar {
     background-color: black;
     color: white;
     font-size: 25px;
     padding: 15px 40px;
     border-radius: 30px;
     border: none;
+    margin-bottom: 20px;
   }
 
-  .login-botao-cadastre-se{
-  font-weight: bold;
-  font-size: 20px;
-  }
+  

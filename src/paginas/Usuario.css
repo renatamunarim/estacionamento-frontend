@@ -1,0 +1,222 @@
+.adm-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.img-estrada,
+.rodape {
+    width: 100%;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo img{
+    margin: 20px 0px;
+}
+
+.logo {
+    height: 80px;
+    margin: 20px 0px;
+}
+
+.saudacao {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+    justify-content: flex-end;
+    color: black;
+
+}
+
+#ola {
+    margin: 0px;
+}
+
+.saudacao span {
+    color: red;
+}
+
+.usu-botao-sair {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0px;
+    border: 0px;
+    right: 32px;
+    position: absolute;
+    color: black;
+
+}
+
+.container-usuario {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.secao {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-secao {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: black;
+    margin-top: 20px;
+    font-family: 'Anton', sans-serif;
+}
+
+.ul-veiculos {
+    list-style: none;
+    padding: 0;
+    color: black;
+
+}
+
+.li-veiculos {
+    color: black;
+    display: flex;
+    align-items: center;
+    margin: 5px 5px 5px 0px;
+}
+
+.li-veiculos {
+    color: black;
+    display: flex;
+    align-items: center;
+    margin: 5px 5px 5px 0px;
+}
+
+.itens-lista-veiculos {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.itens-lista-veiculos input {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    width: 100px;
+    margin: 0px 5px 5px 0px;
+
+
+}
+
+.usu-img-botao {
+    width: 30px;
+}
+
+.usu-botao {
+    margin: 0px 5px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: 0px;
+
+}
+
+.botoes-edicao-veiculos {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
+#veiculos-cadastrado {
+    font-size: 20px;
+}
+
+.lista-acessos {
+    list-style: none;
+    padding: 0;
+    color: black;
+    margin-top: 0;
+
+}
+
+.lista-acessos li {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.titulo-cadastrar {
+    font-size: 25px;
+    color: black;
+    margin: 0px;
+    padding-right: 120px;
+    font-family: 'Anton', sans-serif;
+}
+
+.div-cadastro-botao {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.div-cadastro {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-cadastro input {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 10px 10px;
+    font-size: 16px;
+    width: 125px;
+    justify-content: space-between;
+    margin: 0px 5px;
+
+}
+
+.usu-botao-excluir-perfil {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border: none;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    position: absolute;
+    right: 10px;
+    top: 79%;
+    font-family:anton;
+    cursor: pointer;
+}
+
+
+.botao-adicionar {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 30px;
+    border: none;
+    height: 40px;
+    font-family: 'Anton', sans-serif;
+}
+
+.botoes-editar {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}

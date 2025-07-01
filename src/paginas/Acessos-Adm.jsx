@@ -82,7 +82,7 @@ function AcessosAdm() {
         <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
 
         <div className="saudacao">
-          Olá, <span>Admin</span> <br />
+          <p id="ola">Olá, <span>Admin</span> </p>
           <button className="adm-botao-sair" onClick={handleLogout}>Sair?</button>
         </div>
 

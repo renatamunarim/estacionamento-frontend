@@ -27,7 +27,12 @@
     font-size: 24px;
     font-weight: bold;
     justify-content: flex-end;
+    color: black;
 
+}
+
+#ola {
+    margin: 0px;
 }
 
 .saudacao span {
@@ -41,6 +46,7 @@
     border: 0px;
     right: 32px;
     position: absolute;
+    color: black;
 
 }
 
@@ -54,6 +60,7 @@
     color: red;
     margin: 2rem 0;
     font-weight: bold;
+    font-family: 'Anton', sans-serif;
 }
 
 .adm-cadastrar-acesso {
@@ -89,18 +96,22 @@
     margin: 10px;
 
 }
+
 #adm-acesso-titulo {
     font-size: 25px;
     font-weight: bold;
+    color: black;
+    font-family: 'Anton', sans-serif;
 }
 
 .adm-botao-registrar {
     background-color: black;
     color: white;
     font-size: 25px;
-    padding: 15px 30px;
+    padding: 10px 25px;
     border-radius: 30px;
     border: none;
+    font-family: 'Anton', sans-serif;
 }
 
 .status-estacionamento {
@@ -111,6 +122,8 @@
     font-weight: bold;
     margin-bottom: 25px;
     margin-top: 25px;
+    color: black;
+    font-family: 'Anton', sans-serif;
 }
 
 .status-estacionamento span {
@@ -118,14 +131,15 @@
     border: 2px solid black;
     border-radius: 20px;
     padding: 5px 15px;
+
 }
 
-.status-estacionamento 
-.status {
+.status-estacionamento .status {
     color: red;
+    font-family: 'Anton', sans-serif;
 }
 
-.div-relatorio{
+.div-relatorio {
     display: flex;
     justify-content: flex-end;
     padding-right: 32px;
@@ -134,11 +148,12 @@
 .adm-botao-relatorio {
     background-color: black;
     color: white;
-    font-size: 20px;
-    padding: 15px 15    px;
+    font-size: 25px;
+    padding: 10px 15px;
     border-radius: 30px;
     border: none;
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 300px;
+    width: 250px;
+    font-family: 'Anton', sans-serif;
 }

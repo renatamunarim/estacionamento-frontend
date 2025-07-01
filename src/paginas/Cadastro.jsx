@@ -83,7 +83,7 @@ function Cadastro() {
                         required
                     />
                     <br />
-                    <select className="input-cadastrar"
+                    <select className="input-cadastrar-select"
                         value={tipo}
                         onChange={(e) => setTipo(e.target.value)}
                         required
@@ -92,7 +92,7 @@ function Cadastro() {
                         <option value="aluno">Aluno</option>
                         <option value="professor">Professor</option>
                         <option value="funcionario">Funcionário</option>
-                        <option value="admin">admin</option>
+                        <option value="admin">Administrador</option>
                     </select>
                     <br />
                     <button className="cadastro-botao-cadastrar" type="submit">Cadastrar</button>

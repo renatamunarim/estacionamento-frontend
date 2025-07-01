@@ -37,13 +37,16 @@
     background-color: black;
     color: white;
     font-size: 40px;
-    padding: 10px 40px;
+    padding: 0px 30px;
     border-radius: 30px;
     border: none;
     margin-bottom: 20px;
+        font-family: 'Anton', sans-serif;
   }
 
   .login-botao-cadastre-se{
   font-weight: bold;  
   font-size: 18px;
+    font-family: 'Anton', sans-serif;
+        padding: 0px 30px;
   }

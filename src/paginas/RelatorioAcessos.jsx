@@ -1,9 +1,14 @@
 import "./RelatorioAcessos.css"
+import logo from "../assets/estacionamento.png"
+import estrada from "../assets/estradinha.png"
+import rodape from "../assets/senai.png"
 import { useEffect, useState } from "react"
 import axios from "../servicos/Api"
+import { useNavigate } from "react-router-dom"
 
 function RelatorioAcessos() {
   const [acessos, setAcessos] = useState([])
+  const navigate = useNavigate()
 
   async function buscarRelatorio() {
     try {
@@ -17,6 +22,11 @@ function RelatorioAcessos() {
     }
   }
 
+  function handleLogout() {
+    localStorage.removeItem("token")
+    navigate("/")
+  }
+
   useEffect(() => {
     buscarRelatorio()
   }, [])
@@ -24,7 +34,7 @@ function RelatorioAcessos() {
   function exportarCSV() {
     const linhas = acessos.map((acesso) =>
       [
-        acesso.usuario?.nome || "",
+        acesso.veiculo?.usuario?.nome || "",
         acesso.veiculo?.placa || "",
         acesso.tipo,
         new Date(acesso.horario).toLocaleString(),
@@ -44,12 +54,22 @@ function RelatorioAcessos() {
   }
 
   return (
-    <div>
-      <h2>Relatório de Acessos</h2>
+    <div className="rel-container">
+      <img src={estrada} alt="Estrada" className="img-estrada" />
 
-      <button onClick={exportarCSV}>Exportar CSV</button>
+      <div className="topo">
+        <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
 
-      <table border="1">
+        <div className="saudacao">
+          <p id="ola">Olá, <span>Admin</span> </p>
+          <button className="rel-botao-sair" onClick={handleLogout}>Sair?</button>
+        </div>
+
+      </div>
+      <h2 className="titulo" >Relatório de Acessos</h2>
+
+
+      <table className="relatorio-tabela" >
         <thead>
           <tr>
             <th>Nome</th>
@@ -61,7 +81,7 @@ function RelatorioAcessos() {
         <tbody>
           {acessos.map((acesso) => (
             <tr key={acesso.id}>
-              <td>{acesso.usuario?.nome}</td>
+              <td>{acesso.veiculo?.usuario?.nome}</td>
               <td>{acesso.veiculo?.placa}</td>
               <td>{acesso.tipo}</td>
               <td>{new Date(acesso.horario).toLocaleString()}</td>
@@ -69,6 +89,10 @@ function RelatorioAcessos() {
           ))}
         </tbody>
       </table>
+      <div className="div-botao-exportar">
+        <button className="rel-botao-exportar" onClick={exportarCSV}>EXPORTAR</button>
+      </div >
+      <img src={rodape} alt="SENAI" className="rodape" />
     </div>
   )
 }

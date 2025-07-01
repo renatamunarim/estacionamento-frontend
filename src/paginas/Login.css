@@ -8,8 +8,8 @@
     font-family: sans-serif;
   }
   
-.login-topo,
-  .bottom-img {
+  .img-estrada,
+  .rodape {
     width: 100%;
   }
   
@@ -36,14 +36,14 @@
   .login-botao-entrar {
     background-color: black;
     color: white;
-    font-size: 25px;
-    padding: 15px 40px;
+    font-size: 40px;
+    padding: 10px 40px;
     border-radius: 30px;
     border: none;
     margin-bottom: 20px;
   }
 
   .login-botao-cadastre-se{
-  font-weight: bold;
-  font-size: 15px;
+  font-weight: bold;  
+  font-size: 18px;
   }

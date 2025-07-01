@@ -75,32 +75,42 @@ function AcessosAdm() {
 
 
   return (
-    <div className="cadastro-container">
-      <img src={estrada} alt="Estrada" className="cadastro-topo" />
+    <div className="adm-container">
+      <img src={estrada} alt="Estrada" className="img-estrada" />
+
       <div className="topo">
         <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
+
         <div className="saudacao">
           Olá, <span>Admin</span> <br />
+          <button className="adm-botao-sair" onClick={handleLogout}>Sair?</button>
         </div>
-      </div>
-      <button className="adm-botao-sair" onClick={handleLogout}>Sair</button>
 
-      {lotado && <p id="lotado">Estacionamento lotado!</p>}
-      <h2>Cadastrar acesso</h2>
-      <form onSubmit={registrarAcesso}>
-        <input
-          type="text"
-          placeholder="Placa"
-          value={placa}
-          onChange={(e) => setPlaca(e.target.value.toUpperCase())}
-          required
-        />
-        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <option value="entrada">Entrada</option>
-          <option value="saida">Saída</option>
-        </select>
+      </div>
+
+      <div className="lotado">{lotado && <p id="lotado">ESTACIONAMENTO LOTADO!</p>}</div>
+
+      <div className="adm-cadastrar-acesso">
+        <h2 id="adm-acesso-titulo">Cadastrar acesso</h2>
+        <form onSubmit={registrarAcesso}>
+          <div id="adm-formulario-acesso">
+            <input
+              className="input-acesso"
+              type="text"
+              placeholder="Placa"
+              value={placa}
+              onChange={(e) => setPlaca(e.target.value.toUpperCase())}
+              required
+            />
+            <select className="select-acesso" value={tipo} onChange={(e) => setTipo(e.target.value)}>
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </select>
+          </div>
+        </form>
         <button className="adm-botao-registrar" type="submit">Registrar</button>
-      </form>
+      </div>
+
 
       {status ? (
         <div className="status-estacionamento">
@@ -110,11 +120,13 @@ function AcessosAdm() {
       ) : (
         <p>Carregando status...</p>
       )}
-      <button className="adm-botao-relatorio" onClick={() => navigate("/relatorio-acessos")}>
-        Relatório de Acessos
-      </button>
-            <img src={rodape} alt="SENAI" className="bottom-img" />
-        </div>
+      <div className="div-relatorio">
+        <button className="adm-botao-relatorio" onClick={() => navigate("/relatorio-acessos")}>
+          RELATÓRIO DE ACESSOS
+        </button>
+      </div>
+      <img src={rodape} alt="SENAI" className="rodape" />
+    </div>
   )
 }
 

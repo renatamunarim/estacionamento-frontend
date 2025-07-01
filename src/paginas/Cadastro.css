@@ -1,46 +1,46 @@
 .cadastro-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    background-color: white;
-    font-family: sans-serif;
-  }
-  
-.cadastro-topo,
-  .bottom-img {
-    width: 100%;
-  }
-  
-  .cadastro-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-.cadastro-logo {
-    width: 400px;
-    margin: 20px;
-    align-items: left;
-  }
-  
-  .input-cadastrar {
-    width: 300px;
-    padding: 15px;
-    border-radius: 30px;
-    border: 2px solid black;
-    font-size: 20px;
-  }
-  
-  .cadastro-botao-cadastrar {
-    background-color: black;
-    color: white;
-    font-size: 25px;
-    padding: 15px 40px;
-    border-radius: 30px;
-    border: none;
-    margin-bottom: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: white;
+  font-family: sans-serif;
+}
 
-  
+.img-estrada,
+.rodape {
+  width: 100%;
+}
+
+.cadastro-logo {
+  width: 400px;
+  margin: 20px;
+  align-items: left;
+}
+
+.cadastro-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.input-cadastrar {
+  width: 300px;
+  padding: 15px;
+  border-radius: 30px;
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+.cadastro-botao-cadastrar {
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: none;
+  margin-bottom: 20px;
+}

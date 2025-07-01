@@ -38,12 +38,12 @@ function Cadastro() {
     }
 
     return (
-    <div className="cadastro-container">
-      <img src={estrada} alt="Estrada" className="cadastro-topo" />
-                      <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
-      <div className="cadastro-content">
-                <form className="cadastro-content" onSubmit={handleCadastro}>
-                    <input  className="input-cadastrar"
+        <div className="cadastro-container">
+            <img src={estrada} alt="Estrada" className="img-estrada" />
+            <img src={logo} alt="Logo Estacionamento" className="cadastro-logo" />
+            <div >
+                <form className="cadastro-formulario" onSubmit={handleCadastro}>
+                    <input className="input-cadastrar"
                         type="text"
                         placeholder="Nome completo"
                         value={nome}
@@ -98,7 +98,7 @@ function Cadastro() {
                     <button className="cadastro-botao-cadastrar" type="submit">Cadastrar</button>
                 </form>
             </div>
-            <img src={rodape} alt="SENAI" className="bottom-img" />
+            <img src={rodape} alt="SENAI" className="rodape" />
         </div>
     )
 }

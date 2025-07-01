@@ -42,7 +42,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      <img src={estrada} alt="Estrada" className="login-topo" />
+            <img src={estrada} alt="Estrada" className="img-estrada" />
       <div className="login-content">
         <img src={logo} alt="Logo Estacionamento" className="login-logo" />
         <input
@@ -60,7 +60,7 @@ function Login() {
         <button className="login-botao-cadastre-se"onClick={() => navigate("/cadastro")}>Cadastre-se</button>
         <button className="login-botao-entrar" onClick={handleLogin}>Entrar</button>
       </div>
-      <img src={rodape} alt="SENAI" className="bottom-img" />
+            <img src={rodape} alt="SENAI" className="rodape" />
     </div>
   )
 }

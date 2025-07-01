@@ -91,7 +91,8 @@ function Usuario() {
       const veiculo = veiculos.find(v => v.id === id)
       await axios.put(`/veiculos/${id}`, {
         placa: veiculo.placa,
-        modelo: veiculo.modelo
+        modelo: veiculo.modelo,
+        cor: veiculo.cor
       }, {
         headers: { Authorization: `Bearer ${token}` }
       })
@@ -187,7 +188,7 @@ function Usuario() {
           <h2 className="titulo-cadastrar">Cadastrar novo veículo</h2>
           <button className="botao-adicionar" onClick={adicionarVeiculo}>ADICIONAR</button>
         </div>
-        <div  className="div-cadastro">
+        <div className="div-cadastro">
           <input
             placeholder="Placa"
             value={novoVeiculo.placa}
@@ -205,9 +206,9 @@ function Usuario() {
           />
         </div>
         <div>
-      <button className="usu-botao-excluir-perfil" onClick={excluirPerfil}>
-        Excluir conta?
-      </button>          
+          <button className="usu-botao-excluir-perfil" onClick={excluirPerfil}>
+            Excluir conta?
+          </button>
         </div>
       </div>
 

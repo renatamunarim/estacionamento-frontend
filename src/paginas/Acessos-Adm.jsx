@@ -108,7 +108,7 @@ function AcessosAdm() {
             </select>
           </div>
         </form>
-        <button className="adm-botao-registrar" type="submit">Registrar</button>
+        <button className="adm-botao-registrar" type="submit" onClick={registrarAcesso}>Registrar</button>
       </div>
 
 
